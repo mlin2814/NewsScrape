@@ -47,11 +47,11 @@ app.get("/", function(req, res) {
 // A GET request to scrape the BBC website
 app.get("/scrape", function(req, res) {
   // First, we grab the body of the html with request
-  request("http://www.bbc.com/news", function(error, response, html) {
+  request("http://www.cnn.com/specials/last-50-stories", function(error, response, html) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(html);
-    // Now, we grab every title within a span tag, and do the following:
-    $("span.title-link__title-text").each(function(i, element) {
+    // Now, we grab every title within a div tag, and do the following:
+    $("div h3").each(function(i, element) {
 
       // Save an empty result object
       var result = {};
