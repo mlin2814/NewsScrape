@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/newsarticlescrape");
+mongoose.connect("mongodb://heroku_9lskznzn:vngmlg3mdfec9gns4dlrrkhasj@ds129028.mlab.com:29028/heroku_9lskznzn");
 var db = mongoose.connection;
 
 db.on("error", function(error) {
